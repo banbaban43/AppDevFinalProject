@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Quizzapp.Pages.EditQuizPage"
+             Title="Edit Quiz"
+             xmlns:models="clr-namespace:Quizzapp.Model"
+            >
+    <ScrollView VerticalOptions="FillAndExpand" >
+        <StackLayout Padding="10" Spacing="10">
+
+            <Label Text="Quiz Title:"/>
+            <Entry Placeholder="Quiz Title"
+                       PlaceholderColor="Gray"
+                       TextColor="White"
+                       BackgroundColor="#1A1A1A"
+                       Margin="0,0,0,0"
+                       HeightRequest="50"
+                   x:Name="EntryTitle"
+                       ClearButtonVisibility="WhileEditing"/>
+            <Label Text="Quiz Description:"/>
+            <Entry Placeholder="Description"
+              PlaceholderColor="Gray"
+              TextColor="White"
+              BackgroundColor="#1A1A1A"
+              Margin="0,10,0,0"
+              HeightRequest="75"
+              x:Name="EntryDescription"
+                   ClearButtonVisibility="WhileEditing"
+                   HorizontalTextAlignment="Start"
+              />
+            <HorizontalStackLayout Spacing="20" Padding="10" Margin="10">
+                <Label Text="Public"/>
+                <Switch HorizontalOptions="End" Toggled="Switch_Toggled" x:Name="switch1"/>
+
+            </HorizontalStackLayout>
+          
+            <Label Text="Add/Edit Questions:"/>
+
+            <StackLayout Padding="10" Margin="0,0,0,10" BackgroundColor="#1A1A1A">
+
+                <Entry Placeholder="Enter Question"
+                PlaceholderColor="Gray"
+            
+                TextColor="White" 
+                x:Name="EntryQuestion"/>
+
+                <Entry Placeholder="Correct Answer"
+                x:Name="EntryCorrectAns"
+                PlaceholderColor="Gray"
+                TextColor="White" />
+                <Button Text="Save Question"
+                TextColor="Black"
+                BackgroundColor="White"
+                Margin="0,10,0,0" 
+                x:Name="AddQuestionButton"
+                Clicked="AddQuestionButton_Clicked"/>
+            
+
+
+            </StackLayout>
+
+            <ListView x:Name="listview" 
+                                Margin="0,0,0,0" ItemTapped="listview_ItemTapped" HasUnevenRows="True">
+                <ListView.Header>Questions</ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                        <VerticalStackLayout Padding="5">
+                            <Frame BackgroundColor="White"  CornerRadius="10">
+                                <HorizontalStackLayout>
+                                    <StackLayout>
+                                        <Label Text="{Binding QuestionText}" 
+                                                TextColor="Black"
+                                                FontSize="18"
+                                                FontAttributes="Bold"
+                                                LineBreakMode="TailTruncation" 
+                                                    />
+                                        <Label Text="{Binding CorrectAnswer}"
+                                                TextColor="Black"
+                                                FontSize="14"
+                                                LineBreakMode="TailTruncation" />
+                                    </StackLayout>
+                                </HorizontalStackLayout>
+                            </Frame>
+                        </VerticalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+            <Button Text="Save Quiz"
+                        TextColor="Black"
+                        BackgroundColor="White"
+                        x:Name="SaveButton"
+                    Clicked="SaveButton_Clicked"
+                        Margin="0,20,0,0" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

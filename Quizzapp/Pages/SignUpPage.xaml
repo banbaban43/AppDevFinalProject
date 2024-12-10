@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Quizzapp.Pages.SignUpPage"
+             Title="SignUpPage">
+    <StackLayout Padding="20" VerticalOptions="Center" HorizontalOptions="Center">
+
+        <Label Text="Sign Up"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="White" />
+
+        <Entry x:Name="UsernameEntry"
+                   Placeholder="Username"
+                   PlaceholderColor="Gray"
+                   TextColor="White"
+                   BackgroundColor="#1A1A1A"
+                   Margin="0,20,0,0"
+                   HeightRequest="50"
+                   HorizontalOptions="FillAndExpand"
+                   />
+
+        <Entry x:Name="EmailEntry"
+                   Placeholder="Email"
+                   PlaceholderColor="Gray"
+                   TextColor="White"
+                   BackgroundColor="#1A1A1A"
+                   Margin="0,20,0,0"
+                   HeightRequest="50"
+                   WidthRequest="300"
+                   HorizontalOptions="FillAndExpand"
+                   />
+
+        <Entry x:Name="PasswordEntry"
+                   Placeholder="Password"
+                   PlaceholderColor="Gray"
+                   TextColor="White"
+                   BackgroundColor="#1A1A1A"
+                   IsPassword="True"
+                   Margin="0,20,0,0"
+                   HeightRequest="50"
+                   WidthRequest="300"
+                   HorizontalOptions="FillAndExpand" 
+                   />
+
+        <Entry x:Name="ConfirmPasswordEntry"
+                   Placeholder="Confirm Password"
+                   PlaceholderColor="Gray"
+                   TextColor="White"
+                   BackgroundColor="#1A1A1A"
+                   IsPassword="True"
+                   Margin="0,20,0,0"
+                   HeightRequest="50"
+                   WidthRequest="300"
+                   HorizontalOptions="FillAndExpand" 
+                   />
+
+        <Button Text="Sign Up"
+                    x:Name="SignUpButton"
+                    TextColor="Black"
+                    BackgroundColor="White"
+                    Margin="0,20,0,0"
+                    HeightRequest="50"
+                    WidthRequest="300"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="SignUpButton_Clicked" 
+                    />
+    </StackLayout>
+</ContentPage>

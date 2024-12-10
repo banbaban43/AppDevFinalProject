@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Quizzapp.Pages.AddQuizPage"
+             Title="AddQuizPage"
+             NavigationPage.HasNavigationBar="False">
+    <VerticalStackLayout Margin="20">
+        <Label Text="Create Quiz"
+             FontSize="24"
+             FontAttributes="Bold"
+             HorizontalOptions="Center"
+             TextColor="White" />
+
+        <Entry Placeholder="Quiz Title"
+             PlaceholderColor="Gray"
+             TextColor="White"
+             BackgroundColor="#1A1A1A"
+             Margin="0,20,0,0"
+             HeightRequest="50"
+               x:Name="EntryTitle"
+             />
+        <Entry Placeholder="Description"
+         PlaceholderColor="Gray"
+         TextColor="White"
+         BackgroundColor="#1A1A1A"
+         Margin="0,20,0,0"
+         HeightRequest="50"
+         x:Name="EntryDescription"
+               
+         />
+
+        <Button Text="Save Quiz"
+                        TextColor="Black"
+                        BackgroundColor="White"
+                        x:Name="SaveButton"
+                    Clicked="SaveButton_Clicked"
+                        Margin="0,20,0,0" />
+    </VerticalStackLayout>
+</ContentPage>

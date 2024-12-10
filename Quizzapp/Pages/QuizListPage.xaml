@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Quizzapp.Pages.QuizListPage"
+             Title="Available Quizzes"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout Padding="10">
+        <Label Text="Available Quizzes" Margin="20" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+
+        <ListView  x:Name="listView" SelectedItem="{Binding SelectedQuiz}"
+                   SelectionMode="Single" ItemTapped="listView_ItemTapped"
+                   HasUnevenRows="True" SeparatorVisibility="None" VerticalScrollBarVisibility="Always" 
+                    Scrolled="listView_Scrolled" VerticalOptions="FillAndExpand" IsPullToRefreshEnabled="False" Refreshing="listView_Refreshing"> 
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        
+                            <Frame BackgroundColor="Beige"  CornerRadius="10" Margin="10">
+                            <Grid Margin="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width=".25*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width=".25*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Label Text="Quiz Title: " 
+                                TextColor="Black"
+                                FontSize="14"
+                                
+                                LineBreakMode="TailTruncation" 
+                                Grid.Column="0"
+                                Grid.Row="0"
+                                    />
+
+                                <Label Text="{Binding Title}" 
+                                        TextColor="Black"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        LineBreakMode="TailTruncation" 
+                                        Grid.Column="1"
+                                        Grid.Row="0"
+                                           />
+                                <Label Text="Description: " 
+  TextColor="Black"
+  FontSize="14"
+
+  LineBreakMode="TailTruncation" 
+  Grid.Column="0"
+  Grid.Row="1"
+      />
+                                <Label Text="{Binding Description}"
+                                                TextColor="Black"
+                                                FontSize="14"
+                                                LineBreakMode="NoWrap" 
+
+                                               Grid.Column="1"
+                                                Grid.Row="1"
+                                       Grid.RowSpan="2"/>
+                                
+                                <Label Text="Created By: " 
+                                TextColor="Black"
+  FontSize="14"
+ 
+  LineBreakMode="TailTruncation" 
+  Grid.Column="2"
+  Grid.Row="0"
+      />
+
+                                <Label Text="{Binding CreatedBy}"
+                                        TextColor="Black"
+                                        FontSize="14"
+                                        FontAttributes="Bold"
+                                        LineBreakMode="TailTruncation" 
+                                        Grid.Column="3"
+                                        Grid.Row="0"/>
+                            </Grid>
+                        </Frame>
+                        
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Manage Quizzes" x:Name="ManageButton" Clicked="ManageButton_Clicked" 
+                BackgroundColor="Transparent" TextColor="LightYellow" BorderColor="LightYellow" 
+                BorderWidth="2" HeightRequest="50"/>
+    </StackLayout>
+</ContentPage>

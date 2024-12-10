@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Quizzapp.Pages.LoginPage"
+             Title="">
+
+    <StackLayout Padding="20" Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
+
+        <Label Text="Welcome to Quizzap"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="White" />
+
+        <Frame CornerRadius="10" Padding="10" BackgroundColor="#1A1A1A" BorderColor="White">
+            <VerticalStackLayout>
+
+           <Entry x:Name="UsernameEntry"
+                  
+           Placeholder="Username"
+           PlaceholderColor="Gray"
+           TextColor="White"
+           BackgroundColor="#1A1A1A"
+           Margin="0,20,0,0"
+           HeightRequest="50"
+           WidthRequest="300"
+           HorizontalOptions="FillAndExpand"
+           />
+
+           <Entry x:Name="PasswordEntry"
+           Placeholder="Password"
+           PlaceholderColor="Gray"
+           TextColor="White"
+           BackgroundColor="#1A1A1A"
+           IsPassword="True"
+           Margin="0,20,0,0"
+           HeightRequest="50"
+           WidthRequest="300"
+           HorizontalOptions="FillAndExpand"
+           />
+
+                <Button Text="Login"
+            TextColor="Black"
+            BackgroundColor="White"
+            Margin="0,20,0,0"
+            HeightRequest="50"
+            WidthRequest="300"
+            HorizontalOptions="FillAndExpand"
+            x:Name="LoginButton"
+            Clicked="LoginButton_Clicked"
+                  />
+            </VerticalStackLayout>
+        </Frame>
+
+        <Button Text="Register" 
+                
+                TextColor="White"
+                x:Name="RegisterButton" 
+                BorderColor="White" 
+                BorderWidth="2" 
+                BackgroundColor="Transparent"
+                Clicked="RegisterButton_Clicked"
+                />
+
+
+
+
+    </StackLayout>
+</ContentPage>
